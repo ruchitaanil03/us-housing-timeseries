@@ -169,7 +169,7 @@ The analysis is motivated by the housing market's central role in consumer spend
 
 1. **Rate → Permits → Starts:** A mortgage rate rise raises financing costs, reducing permit applications; this flows through to housing starts with a 3 to 6 month lag
 2. **Starts → Home improvement demand:** New construction and housing transactions are the primary driver of large-ticket home improvement spending (flooring, appliances, fixtures)
-3. **Sun Belt concentration:** Post-pandemic migration patterns have concentrated US housing supply growth in Atlanta, Dallas, Phoenix, and Houston — markets characterised by high housing turnover and above-average home improvement expenditure per household
+3. **Sun Belt concentration:** Post-pandemic migration patterns have concentrated US housing supply growth in Atlanta, Dallas, Phoenix, and Houston, markets characterised by high housing turnover and above-average home improvement expenditure per household
 
 ---
 
