@@ -11,7 +11,7 @@ This project analyses the dynamics of the US residential housing market using mo
 
 The central research question is:
 
-> **Do monetary policy changes, specifically mortgage rate movements — predict housing starts, and if so, with what transmission lag?**
+> **Do monetary policy changes, specifically mortgage rate movements, predict housing starts, and if so, with what transmission lag?**
 
 The analysis proceeds in four phases, from raw data extraction through ARIMA/ARIMAX modelling and sub-national extensions, combining classical time series econometrics with model diagnostics.
 
@@ -90,7 +90,7 @@ Monthly FRED data pulled via API for 6 macroeconomic series. Missing values hand
 
 ![Stationarity: Levels vs First Differences](stationarity_comparison.png)
 
-### Phase 3 — ARIMA / SARIMA / ARIMAX Modelling
+### Phase 3: ARIMA / SARIMA / ARIMAX Modelling
 Train/test split: last 12 months held out for out-of-sample evaluation.
 
 | Model | Specification | AIC | Test RMSE |
