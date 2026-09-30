@@ -1,4 +1,4 @@
-# US Housing & Consumer Market Indicators — Time Series Analysis
+# US Housing & Consumer Market Indicators: Time Series Analysis
 
 **Ruchita Anil Zingade | MA Economics, Madras School of Economics (Semester III)**  
 **Course: Applied Macro and Financial Econometrics**
@@ -11,7 +11,7 @@ This project analyses the dynamics of the US residential housing market using mo
 
 The central research question is:
 
-> **Do monetary policy changes — specifically mortgage rate movements — predict housing starts, and if so, with what transmission lag?**
+> **Do monetary policy changes, specifically mortgage rate movements — predict housing starts, and if so, with what transmission lag?**
 
 The analysis proceeds in four phases, from raw data extraction through ARIMA/ARIMAX modelling and sub-national extensions, combining classical time series econometrics with model diagnostics.
 
@@ -19,8 +19,8 @@ The analysis proceeds in four phases, from raw data extraction through ARIMA/ARI
 
 ## Key Findings
 
-- US housing starts follow an **ARIMA(0,1,1)** process — a single lagged shock carries over month to month after first differencing
-- **Granger causality** from mortgage rates to housing starts is significant at lag 6 (F=2.803, p=0.011), but not at lags 1 or 3 — consistent with a 6-month monetary policy transmission lag
+- US housing starts follow an **ARIMA(0,1,1)** process a single lagged shock carries over month to month after first differencing
+- **Granger causality** from mortgage rates to housing starts is significant at lag 6 (F=2.803, p=0.011), but not at lags 1 or 3, consistent with a 6-month monetary policy transmission lag
 - **Lagged ARIMAX** confirms: mortgage rate at t-3 (coef=-62.5, p=0.003) and t-6 (coef=-73.4, p=0.002) are both highly significant; the contemporaneous rate is not (p=0.34)
 - A **COVID structural break dummy** (March 2020 to June 2021) is highly significant (coef=-109.5, p=0.002), isolating the pandemic shock from underlying market dynamics
 - **12-month forecast** (Oct 2026 to Sep 2027): housing starts projected in the range of 1,204 to 1,402 thousand units annualised
@@ -42,7 +42,7 @@ All data extracted via the [FRED API](https://fred.stlouisfed.org/) (fredapi, Py
 
 **Period:** January 2000 to September 2026 | **Frequency:** Monthly
 
-![Macroeconomic Overview](outputs/macro_overview.png)
+![Macroeconomic Overview](macro_overview.png)
 
 ---
 
@@ -78,17 +78,17 @@ US_housing/
 
 ## Methods
 
-### Phase 1 — Data Extraction
+### Phase 1: Data Extraction
 Monthly FRED data pulled via API for 6 macroeconomic series. Missing values handled via forward-fill (2 months or fewer); series aligned to a common monthly index.
 
-### Phase 2 — Decomposition and Stationarity
+### Phase 2: Decomposition and Stationarity
 - **Seasonal decomposition** (additive model, period=12): trend, seasonal, and residual components extracted for housing starts, mortgage rate, and HPI
 - **Augmented Dickey-Fuller (ADF) test** applied to all series at level and after first differencing
 - Housing starts: p=0.47 at level (non-stationary) → p<0.001 after first differencing (stationary) → integrated of order I(1)
 
-![Seasonal Decomposition](outputs/decomposition_plots.png)
+![Seasonal Decomposition](decomposition_plots.png)
 
-![Stationarity: Levels vs First Differences](outputs/stationarity_comparison.png)
+![Stationarity: Levels vs First Differences](stationarity_comparison.png)
 
 ### Phase 3 — ARIMA / SARIMA / ARIMAX Modelling
 Train/test split: last 12 months held out for out-of-sample evaluation.
@@ -101,9 +101,9 @@ Train/test split: last 12 months held out for out-of-sample evaluation.
 
 ARIMAX selected as best model by AIC. 12-month forecast produced using SARIMA refitted on full sample.
 
-![ARIMA/ARIMAX Results and 12-Month Forecast](outputs/arima_results.png)
+![ARIMA/ARIMAX Results and 12-Month Forecast](arima_results.png)
 
-### Phase 4 — Extensions
+### Phase 4: Extensions
 
 **Granger Causality Test**
 - Mortgage rate to housing starts: significant at lag 6 (p=0.011)
@@ -111,13 +111,13 @@ ARIMAX selected as best model by AIC. 12-month forecast produced using SARIMA re
 
 **COVID Structural Break**
 - Binary dummy = 1 for March 2020 to June 2021 added to ARIMA(0,1,1)
-- Coefficient: -109.5 (p=0.002) — pandemic suppressed starts by approximately 110,000 units/month on average
+- Coefficient: -109.5 (p=0.002) pandemic suppressed starts by approximately 110,000 units/month on average
 
 **Lagged ARIMAX**
 - Mortgage rate at t-3 and t-6 included alongside contemporaneous rate, fed funds, and COVID dummy
 - Results confirm 3 to 6 month monetary policy transmission lag; contemporaneous rate insignificant
 
-![Phase 4: COVID Dummy and Lagged Mortgage Rate](outputs/phase4_extensions.png)
+![Phase 4: COVID Dummy and Lagged Mortgage Rate](phase4_extensions.png)
 
 ---
 
@@ -185,9 +185,7 @@ The analysis is motivated by the housing market's central role in consumer spend
 ## Author
 
 **Ruchita Anil Zingade**  
-MA Economics (2025-27), Madras School of Economics, Chennai  
-GATE 2025 AIR 89 | B.Sc. Economics, Gokhale Institute of Politics and Economics (CGPA 9.27)  
-Research interests: Labour economics, fiscal federalism, applied econometrics  
+MA Economics (2025-27), Madras School of Economics, Chennai
 Email: ge25ruchita@mse.ac.in
 
 ---
