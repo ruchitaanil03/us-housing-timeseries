@@ -1,0 +1,11 @@
+Series,ADF Statistic,p-value,Lags Used,Obs Used,Crit Val 1%,Crit Val 5%,Crit Val 10%,Stationary?,Differenced
+Housing Starts (level),-1.3144,0.6225,3,317,-3.451,-2.871,-2.572,No,False
+Mortgage Rate (level),-2.0876,0.2495,3,317,-3.451,-2.871,-2.572,No,False
+House Price Index (level),0.1436,0.9689,15,305,-3.452,-2.871,-2.572,No,False
+PCE (level),2.7785,1.0,11,309,-3.452,-2.871,-2.572,No,False
+Unemployment Rate (level),-2.9875,0.0361,0,320,-3.451,-2.871,-2.572,Yes,False
+Fed Funds Rate (level),-3.7186,0.0039,5,315,-3.451,-2.871,-2.572,Yes,False
+Housing Starts (1st diff),-13.7278,0.0,2,317,-3.451,-2.871,-2.572,Yes,True
+Mortgage Rate (1st diff),-9.2285,0.0,2,317,-3.451,-2.871,-2.572,Yes,True
+House Price Index (1st diff),-2.6132,0.0903,14,305,-3.452,-2.871,-2.572,No,True
+PCE (1st diff),-3.9256,0.0019,11,308,-3.452,-2.871,-2.572,Yes,True
