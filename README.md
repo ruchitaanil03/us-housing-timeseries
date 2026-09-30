@@ -42,6 +42,8 @@ All data extracted via the [FRED API](https://fred.stlouisfed.org/) (fredapi, Py
 
 **Period:** January 2000 to September 2026 | **Frequency:** Monthly
 
+![Macroeconomic Overview](outputs/macro_overview.png)
+
 ---
 
 ## Project Structure
@@ -84,6 +86,10 @@ Monthly FRED data pulled via API for 6 macroeconomic series. Missing values hand
 - **Augmented Dickey-Fuller (ADF) test** applied to all series at level and after first differencing
 - Housing starts: p=0.47 at level (non-stationary) → p<0.001 after first differencing (stationary) → integrated of order I(1)
 
+![Seasonal Decomposition](outputs/decomposition_plots.png)
+
+![Stationarity: Levels vs First Differences](outputs/stationarity_comparison.png)
+
 ### Phase 3 — ARIMA / SARIMA / ARIMAX Modelling
 Train/test split: last 12 months held out for out-of-sample evaluation.
 
@@ -94,6 +100,8 @@ Train/test split: last 12 months held out for out-of-sample evaluation.
 | **ARIMAX** | **(0,1,1) + mortgage + fed funds** | **3672.2** | **90.3** |
 
 ARIMAX selected as best model by AIC. 12-month forecast produced using SARIMA refitted on full sample.
+
+![ARIMA/ARIMAX Results and 12-Month Forecast](outputs/arima_results.png)
 
 ### Phase 4 — Extensions
 
@@ -108,6 +116,8 @@ ARIMAX selected as best model by AIC. 12-month forecast produced using SARIMA re
 **Lagged ARIMAX**
 - Mortgage rate at t-3 and t-6 included alongside contemporaneous rate, fed funds, and COVID dummy
 - Results confirm 3 to 6 month monetary policy transmission lag; contemporaneous rate insignificant
+
+![Phase 4: COVID Dummy and Lagged Mortgage Rate](outputs/phase4_extensions.png)
 
 ---
 
@@ -128,7 +138,7 @@ openpyxl
 ### Setup
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/us-housing-timeseries.git
+git clone https://github.com/ruchitaanil03/us-housing-timeseries.git
 cd us-housing-timeseries
 
 # Create virtual environment
